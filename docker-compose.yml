@@ -10,6 +10,7 @@ services:
       - "./rabbitmq.config:/etc/rabbitmq/rabbitmq.config"
       - "./definitions.json:/etc/rabbitmq/definitions.json"
       - "./data/rabbitmq:/var/lib/rabbitmq/mnesia"
+      - "./certs:/certs"
     ports:
       - "5672:5672"
       - "15672:15672"
@@ -25,6 +26,7 @@ services:
       - "./rabbitmq.config:/etc/rabbitmq/rabbitmq.config"
       - "./definitions.json:/etc/rabbitmq/definitions.json"
       - "./data/rabbitmq:/var/lib/rabbitmq/mnesia"
+      - "./certs:/certs"
   rabbit3:
     image: rabbitmq:3-management
     hostname: rabbit3
@@ -37,6 +39,7 @@ services:
       - "./rabbitmq.config:/etc/rabbitmq/rabbitmq.config"
       - "./definitions.json:/etc/rabbitmq/definitions.json"
       - "./data/rabbitmq:/var/lib/rabbitmq/mnesia"
+      - "./certs:/certs"
 networks:
   default:
     external:
